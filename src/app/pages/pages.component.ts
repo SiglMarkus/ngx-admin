@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
-import { MENU_ITEMS } from './pages-menu';
+import { NbMenuItem } from '@nebular/theme';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-pages',
@@ -14,5 +14,31 @@ import { MENU_ITEMS } from './pages-menu';
 })
 export class PagesComponent {
 
-  menu = MENU_ITEMS;
+  menu: NbMenuItem[] = [
+    {
+      title: this.translate.instant('menu.dashboard'),
+      icon: 'home-outline',
+      link: '/pages/dashboard',
+    },
+    {
+      title: 'Charts',
+      icon: 'pie-chart-outline',
+      children: [
+        {
+          title: 'Echarts',
+          link: '/pages/charts/echarts',
+        },
+        {
+          title: 'Charts.js',
+          link: '/pages/charts/chartjs',
+        }
+      ],
+    },
+  ];
+
+  constructor(
+    private translate: TranslateService,
+  ) {
+  }
+
 }

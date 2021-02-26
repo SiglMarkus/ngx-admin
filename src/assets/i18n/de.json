@@ -1,0 +1,8 @@
+{
+  "menu": {
+    "dashboard": "Dashboard"
+  },
+  "userMenu": {
+    "logout": "Logout"
+  }
+}
