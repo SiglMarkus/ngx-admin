@@ -7,7 +7,7 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['pages.component.scss'],
   template: `
     <ngx-one-column-layout>
-      <nb-menu [items]="menu"></nb-menu>
+      <nb-menu [items]="menu" [autoCollapse]="true"></nb-menu>
       <router-outlet></router-outlet>
     </ngx-one-column-layout>
   `,
@@ -31,7 +31,7 @@ export class PagesComponent {
         {
           title: 'Charts.js',
           link: '/pages/charts/chartjs',
-        }
+        },
       ],
     },
   ];
