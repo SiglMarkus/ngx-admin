@@ -5,7 +5,7 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import {TranslateService} from "@ngx-translate/core";
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'ngx-header',
@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   userMenu = [
     {
-      title: this.translateService.instant('userMenu.logout')
+      title: this.translateService.instant('userMenu.logout'),
     },
   ];
 
@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private userService: UserData,
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService,
-              private translateService: TranslateService
+              private translateService: TranslateService,
   ) {
   }
 

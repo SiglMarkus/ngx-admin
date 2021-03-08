@@ -8,7 +8,7 @@ export class AppSettings {
     FiveMB:     5242880,
     TenMB:      10485760,
     TwentyMB:   20971520,
-    HundredMB:  104857600
+    HundredMB:  104857600,
   };
 
   public static TIMEZONE = moment.tz.guess();
