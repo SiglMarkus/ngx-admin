@@ -6,10 +6,8 @@ import { of as observableOf } from 'rxjs';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import {
-  AnalyticsService,
   LayoutService,
   PlayerService,
-  SeoService,
   StateService,
 } from './utils';
 import { UserData } from './data/users';
@@ -29,7 +27,6 @@ import { TrafficChartData } from './data/traffic-chart';
 import { StatsBarData } from './data/stats-bar';
 import { CountryOrderData } from './data/country-order';
 import { StatsProgressBarData } from './data/stats-progress-bar';
-import { VisitorsAnalyticsData } from './data/visitors-analytics';
 import { SecurityCamerasData } from './data/security-cameras';
 
 import { UserService } from './mock/users.service';
@@ -49,27 +46,10 @@ import { TrafficChartService } from './mock/traffic-chart.service';
 import { StatsBarService } from './mock/stats-bar.service';
 import { CountryOrderService } from './mock/country-order.service';
 import { StatsProgressBarService } from './mock/stats-progress-bar.service';
-import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
 
-const socialLinks = [
-  {
-    url: 'https://github.com/akveo/nebular',
-    target: '_blank',
-    icon: 'github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'twitter',
-  },
-];
+const socialLinks = [];
 
 const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
@@ -89,7 +69,6 @@ const DATA_SERVICES = [
   { provide: StatsBarData, useClass: StatsBarService },
   { provide: CountryOrderData, useClass: CountryOrderService },
   { provide: StatsProgressBarData, useClass: StatsProgressBarService },
-  { provide: VisitorsAnalyticsData, useClass: VisitorsAnalyticsService },
   { provide: SecurityCamerasData, useClass: SecurityCamerasService },
 ];
 
@@ -138,10 +117,8 @@ export const NB_CORE_PROVIDERS = [
   {
     provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
-  AnalyticsService,
   LayoutService,
   PlayerService,
-  SeoService,
   StateService,
 ];
 
